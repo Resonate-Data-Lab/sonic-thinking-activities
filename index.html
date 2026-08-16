@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sonic Activities</title>
+<meta name="description" content="A collection of short sound and listening activities. Get a random one, or browse by time, topic and group size.">
+<link rel="stylesheet" href="fonts.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Line glyphs. One flat stroke drawing per family of topics — they give the
+     pages some character without adding images or weight. -->
+<svg class="sprite" aria-hidden="true" focusable="false"><defs>
+  <g id="g-waves"><path d="M9 8a5 5 0 000 8M5 5a10 10 0 000 14M15 8a5 5 0 010 8M19 5a10 10 0 010 14"/></g>
+  <g id="g-spark"><path d="M12 4v16M4 12h16M6.5 6.5l11 11M17.5 6.5l-11 11"/></g>
+  <g id="g-people"><circle cx="8" cy="9" r="3.2"/><circle cx="16" cy="9" r="3.2"/><path d="M2.5 20c0-3 2.4-5.5 5.5-5.5S13.5 17 13.5 20M10.5 20c0-3 2.4-5.5 5.5-5.5S21.5 17 21.5 20"/></g>
+  <g id="g-mic"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0014 0M12 18v3M8.5 21h7"/></g>
+  <g id="g-path"><path d="M3 18c4 0 3-11 8-11s4 11 9 11"/><circle cx="3" cy="18" r="1.4"/></g>
+  <g id="g-spiral"><path d="M12 15a3 3 0 113-3M12 19a7 7 0 117-7M12 22.5a10.5 10.5 0 1110.5-10.5"/></g>
+  <g id="g-person"><circle cx="12" cy="8" r="3.5"/><path d="M5 21c0-4 3.2-7 7-7s7 3 7 7"/></g>
+  <g id="g-pencil"><path d="M4 20l1-4.2L16.8 4l3.2 3.2L8.2 19z"/><path d="M14.6 6.2l3.2 3.2"/></g>
+  <g id="g-sliders"><path d="M5 4v6M5 14v6M12 4v3M12 11v9M19 4v9M19 17v3"/><circle cx="5" cy="12" r="2"/><circle cx="12" cy="9" r="2"/><circle cx="19" cy="15" r="2"/></g>
+  <g id="g-note"><circle cx="7" cy="18" r="3"/><circle cx="18" cy="16" r="3"/><path d="M10 18V6l11-2v12"/></g>
+  <g id="g-bubble"><path d="M20 13a3 3 0 01-3 3H9l-5 4V6a3 3 0 013-3h10a3 3 0 013 3z"/></g>
+  <g id="g-bars"><path d="M4 14v6M9 9v11M14 4v16M19 11v9"/></g>
+</defs></svg>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="wordmark" href="#/">
+      <svg class="wordmark-glyph" viewBox="0 0 24 24" aria-hidden="true"><use href="#g-waves"/></svg>
+      Sonic <em>Activities</em>
+    </a>
+    <nav class="header-nav">
+      <a href="#/browse">Browse</a>
+      <a href="#/suggest">Suggest</a>
+      <a href="#/about">About</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ============================ HOME ============================ -->
+  <section class="view" id="view-home" hidden>
+    <div class="wrap">
+      <div class="home">
+        <div class="home-copy">
+          <p class="kicker"><span class="rule"></span> A listening collection</p>
+          <h1 class="home-title">Short things<br>to do with <em>sound</em></h1>
+          <p class="home-lead">
+            Fifty-one activities for noticing, recording and playing with what you hear.
+            On your own, with a partner, or with a room full of people.
+          </p>
+
+          <div class="home-actions">
+            <button class="btn btn-lg btn-solid" type="button" id="random-btn">
+              <svg class="btn-glyph" viewBox="0 0 24 24" aria-hidden="true"><use href="#g-spark"/></svg>
+              Give me a random activity
+            </button>
+            <a class="btn btn-lg" href="#/browse">Browse all</a>
+          </div>
+
+          <p class="home-note"><span id="home-count"></span> activities · <span id="home-topics"></span> topics · 5 to 90 minutes</p>
+        </div>
+
+        <div class="home-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><use href="#g-waves"/></svg>
+        </div>
+      </div>
+
+      <ul class="strip">
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#g-mic"/></svg><span>Record something</span></li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#g-path"/></svg><span>Go for a listen</span></li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#g-people"/></svg><span>Warm up a room</span></li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#g-pencil"/></svg><span>Sketch a sound</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- =========================== BROWSE =========================== -->
+  <section class="view" id="view-browse" hidden>
+    <div class="wrap">
+      <div class="browse-head">
+        <div>
+          <p class="kicker"><span class="rule"></span> The collection</p>
+          <h1 class="page-title">Browse</h1>
+        </div>
+        <button class="btn btn-sm" type="button" id="random-btn-2">
+          <svg class="btn-glyph" viewBox="0 0 24 24" aria-hidden="true"><use href="#g-spark"/></svg>
+          Random
+        </button>
+      </div>
+
+      <form class="filters" id="filters">
+        <div class="field">
+          <label for="filter-time">Time</label>
+          <select id="filter-time"></select>
+        </div>
+        <div class="field">
+          <label for="filter-topic">Topic</label>
+          <select id="filter-topic"></select>
+        </div>
+        <div class="field">
+          <label for="filter-social">Social</label>
+          <select id="filter-social"></select>
+        </div>
+        <button class="link-btn" type="button" id="clear-filters">Clear</button>
+      </form>
+
+      <p class="result-count" id="result-count"></p>
+      <ul class="card-grid" id="activity-list"></ul>
+      <div class="empty-state" id="empty-state" hidden></div>
+    </div>
+  </section>
+
+  <!-- =========================== ACTIVITY =========================== -->
+  <section class="view" id="view-activity" hidden>
+    <div class="wrap">
+      <a class="back-link" href="#/browse">Back to browse</a>
+
+      <article class="activity">
+        <div class="activity-head">
+          <svg class="activity-glyph" id="activity-glyph" viewBox="0 0 24 24" aria-hidden="true"><use href="#g-waves"/></svg>
+          <h1 class="page-title" id="activity-title"></h1>
+        </div>
+
+        <ul class="meta-row" id="activity-meta"></ul>
+
+        <div class="activity-timer" id="activity-timer">
+          <span class="timer-title">⏱️ Activity Timer:</span>
+          <div class="timer-box">
+            <input type="number" id="timer-input" class="timer-input" min="1" max="180" value="10" aria-label="Timer minutes">
+            <span class="timer-unit" id="timer-unit">min</span>
+            <span class="timer-display" id="timer-display" hidden>00:00</span>
+            <button class="timer-btn" id="timer-start-btn" type="button">Start</button>
+            <button class="timer-btn" id="timer-pause-btn" type="button" hidden>Pause</button>
+            <button class="timer-btn" id="timer-reset-btn" type="button" hidden>Reset</button>
+          </div>
+          <span class="timer-badge" id="timer-badge" hidden>Time's up! 🎉</span>
+        </div>
+        <p class="overview" id="activity-overview"></p>
+
+        <div class="activity-cols">
+          <div class="activity-main">
+
+            <section class="block">
+              <h2 class="block-title"><span class="rule"></span> How to do it</h2>
+              <ol class="instructions" id="activity-instructions"></ol>
+            </section>
+
+            <section class="block">
+              <h2 class="block-title"><span class="rule"></span> Reflect on it</h2>
+              <ul class="questions" id="activity-reflection"></ul>
+            </section>
+
+            <section class="block">
+              <h2 class="block-title"><span class="rule"></span> What it can look like</h2>
+              <div class="examples" id="activity-examples"></div>
+            </section>
+
+            <section class="block">
+              <h2 class="block-title"><span class="rule"></span> Responses</h2>
+
+              <p class="responses-state" id="responses-state" hidden></p>
+              <ul class="responses" id="responses-list"></ul>
+
+              <form class="entry" id="response-form">
+                <p class="entry-lead">Done this one? Add what you came up with.</p>
+
+                <div class="entry-field">
+                  <label for="response-body">Your response</label>
+                  <textarea id="response-body" name="body" rows="5" maxlength="2000" required
+                            placeholder="What did you notice, make or change your mind about?"></textarea>
+                  <p class="entry-hint"><span id="response-count">0</span> / 2000</p>
+                </div>
+
+                <div class="entry-field">
+                  <label for="response-name">Your name <span class="opt">optional</span></label>
+                  <input id="response-name" name="name" type="text" maxlength="60"
+                         autocomplete="name" placeholder="Leave blank to post anonymously">
+                </div>
+
+                <button class="btn btn-solid entry-submit" type="submit" id="response-submit">Post response</button>
+                <p class="entry-status" id="response-status" role="status" hidden></p>
+              </form>
+            </section>
+
+          </div>
+
+          <aside class="activity-side">
+            <h2 class="block-title"><span class="rule"></span> Try next</h2>
+            <ul class="related" id="activity-related"></ul>
+          </aside>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- =========================== SUGGEST =========================== -->
+  <section class="view" id="view-suggest" hidden>
+    <div class="wrap">
+      <div class="suggest">
+        <p class="kicker"><span class="rule"></span> Add to the collection</p>
+        <h1 class="page-title">Suggest an <em>activity</em></h1>
+        <p class="suggest-lead">
+          Run something that works? Send it in. It doesn't need to be polished —
+          a title and a few sentences is enough to go on.
+        </p>
+
+        <form class="entry entry-card" id="suggest-form">
+          <div class="entry-field">
+            <label for="suggest-title">What's it called</label>
+            <input id="suggest-title" name="title" type="text" maxlength="120" required
+                   placeholder="Mystery Sound">
+          </div>
+
+          <div class="entry-field">
+            <label for="suggest-summary">What happens</label>
+            <textarea id="suggest-summary" name="summary" rows="6" maxlength="2000" required
+                      placeholder="Describe how it runs, start to finish. A few sentences is fine."></textarea>
+            <p class="entry-hint"><span id="suggest-count">0</span> / 2000</p>
+          </div>
+
+          <div class="entry-pair">
+            <div class="entry-field">
+              <label for="suggest-time">How long</label>
+              <input id="suggest-time" name="time" type="text" maxlength="60" placeholder="10 min">
+            </div>
+            <div class="entry-field">
+              <label for="suggest-setting">Group size</label>
+              <select id="suggest-setting" name="setting">
+                <option value="">Not sure</option>
+                <option value="solo">By myself</option>
+                <option value="pair">With a partner</option>
+                <option value="group">With a group</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="entry-pair">
+            <div class="entry-field">
+              <label for="suggest-name">Your name <span class="opt">optional</span></label>
+              <input id="suggest-name" name="name" type="text" maxlength="60" autocomplete="name">
+            </div>
+            <div class="entry-field">
+              <label for="suggest-email">Email <span class="opt">optional</span></label>
+              <input id="suggest-email" name="email" type="email" maxlength="160"
+                     autocomplete="email" placeholder="Only so we can reply">
+            </div>
+          </div>
+
+          <button class="btn btn-solid entry-submit" type="submit" id="suggest-submit">Send suggestion</button>
+          <p class="entry-status" id="suggest-status" role="status" hidden></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ ABOUT ============================ -->
+  <section class="view" id="view-about" hidden>
+    <div class="wrap">
+      <div class="about">
+        <p class="kicker"><span class="rule"></span> About</p>
+        <h1 class="page-title">What this <em>is</em></h1>
+        <div class="prose">
+          <p class="about-lead">Sonic Activities is a collection of short things you can do with sound — listening exercises, recording prompts, warm-ups, sketching and sound-design tasks.</p>
+          <p>Some are quiet and solitary. Some need a room full of people. Most take under twenty minutes, and none of them need special equipment beyond a phone.</p>
+
+          <h2 class="block-title"><span class="rule"></span> How to use it</h2>
+          <p>If you don't know where to start, press <strong>Give me a random activity</strong>. If you know what you're after, browse and filter by how long you have, what the activity is about, and whether you're on your own or with other people.</p>
+
+          <h2 class="block-title"><span class="rule"></span> Every activity has</h2>
+          <ul class="plain-list">
+            <li>How long it takes and whether it's solo, paired or for a group</li>
+            <li>A one-line overview and short instructions — not a long script</li>
+            <li>Questions to think about afterwards</li>
+            <li>Examples of what it can look like, and a box to add your own</li>
+          </ul>
+
+          <h2 class="block-title"><span class="rule"></span> It's meant to grow</h2>
+          <p>Responses and suggestions both go straight into the collection's own database, so the site fills up as people use it.</p>
+          <p><a class="btn btn-sm" href="#/suggest">Suggest an activity</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <p class="footer-mark">
+      <svg class="wordmark-glyph" viewBox="0 0 24 24" aria-hidden="true"><use href="#g-waves"/></svg>
+      Sonic <em>Activities</em>
+    </p>
+    <nav class="footer-nav">
+      <a href="#/browse">Browse</a>
+      <a href="#/suggest">Suggest an activity</a>
+      <a href="#/about">About</a>
+    </nav>
+  </div>
+</footer>
+
+<!-- Supabase keys. Gitignored, so it may not exist on a fresh clone —
+     the site handles that and simply runs without the Responses section. -->
+<script src="config.js"></script>
+<script src="activities.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,4 @@
+# Supabase keys live here. Copy config.example.js to config.js and fill it in.
+config.js
+
+.DS_Store

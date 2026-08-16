@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node --check activities.js)",
+      "Bash(node --check app.js)",
+      "Bash(node -e ' *)"
+    ]
+  }
+}
