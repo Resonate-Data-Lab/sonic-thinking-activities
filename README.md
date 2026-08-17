@@ -24,7 +24,7 @@ Built by Sinthia Rahman Urmi, summer research assistant, Resonate Data Lab, unde
 
 ## Demo video
 
-[Add link to a short screen recording here once available]
+[Watch the demo](https://drive.google.com/file/d/1wJCc9l_YdSY6urkf7hftakLpn8whX3ZC/view?usp=sharing)
 
 ## Background
 
